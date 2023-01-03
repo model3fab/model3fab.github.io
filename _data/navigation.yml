@@ -3,10 +3,8 @@ main:
     url: "#site-nav"
   - title: "Blog"
     url: /posts/
-  - title: "Capítulos"
-    url: "#capítulos"
-  - title: "Escenas"
-    url: /#escena-carentan
+  - title: "Collections"
+    url: "#collections"
   - title: "Acceso gratuito"
     url: "#cursos"
 
