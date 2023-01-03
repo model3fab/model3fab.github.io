@@ -2,7 +2,7 @@
 title: "moodel3fab"
 layout: splash
 permalink: /
-date: 2023-01-03T12:00:00-00:00
+date: 2023-01-02T12:00:00-00:00
 header:
   overlay_color: "#000"
   overlay_filter: "0.0"
