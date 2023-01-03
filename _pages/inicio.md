@@ -1,5 +1,5 @@
 ---
-title: "MODELISMO DIGITAL"
+title: "Configurador 3D para fabricantes"
 layout: splash
 permalink: /inicio/
 date: 2021-12-03T12:00:00-00:00
@@ -10,9 +10,9 @@ header:
   actions:
     - label: "Acceder gratis"
       url: "/inicio#cursos"
-excerpt: "Bienvenido al mundo del"
+excerpt: "model3fab es un configurador 3D online de muebles a medida"
 intro: 
-  - excerpt: '<h2>¿QUÉ ES EL MODELISMO DIGITAL?:</h2> Con los cursos de Modelismo Digital te iniciarás en la manipulación en el entorno 3D y crearás objetos, terrenos, vegetación, personajes, iluminación y materiales para crear escenas completas.'
+  - excerpt: '<h2>¿QUÉ ES MODEL3FAB?:</h2> Es el sitio Web en que puedes definir los muebles que fabricas para que los compradores puedean simular como se ve el mueble elegido al cambiar los parámetros que se define el fabricante'
 feature_row:
   - image_path: https://modelismodigital.com/assets/img/capitulos/C1_img180.jpg
     alt: "placeholder image 1"
