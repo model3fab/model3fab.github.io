@@ -6,7 +6,7 @@ date: 2023-01-02T12:00:00-00:00
 header:
   overlay_color: "#000"
   overlay_filter: "0.0"
-  overlay_image: https://modelismodigital.com/assets/img/ryno-marais-p5JcD-1920.jpg
+  overlay_image: https://model3fab.com/assets/img/ryno-marais-p5JcD-1920.jpg
   actions:
     - label: "Acceso gratuito"
       url: "#cursos"
