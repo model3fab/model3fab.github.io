@@ -6,7 +6,7 @@ date: 2021-12-03T12:00:00-00:00
 header:
   overlay_color: "#000"
   overlay_filter: "0.0"
-  overlay_image: https://modelismodigital.com/assets/img/header-bg.jpg
+  overlay_image: assets/img/ryno-marais-p5JcD-1920.jpg
   actions:
     - label: "Acceder gratis"
       url: "/inicio#cursos"
