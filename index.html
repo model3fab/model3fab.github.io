@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>model3fab</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="w3.css">
@@ -36,10 +36,11 @@ body, html {
     <a href="#home" class="w3-bar-item w3-button w3-wide">model3fab</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">Inicio</a>
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-cubes"></i>Equipo</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i>Ejemplos</a>
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-table"></i> Precios</a>
+      <a href="#home" class="w3-bar-item w3-button">Inicio</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-cubes"></i> Equipo</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Ejemplos</a>
+      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-table"></i> Planes</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contacto</a>
       <a href="Configurator/login.html#contact" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Login</a>
       <a href="Configurator/registerCompany.html#contact" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Registro</a>
       <!--  other icons fa-group -->
@@ -55,11 +56,13 @@ body, html {
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close &times;</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">Inicio</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Equipo</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">Ejemplos</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">Planes</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Contacto</a>
+  <a href="Configurator/login.html#contact" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Login</a>
+  <a href="Configurator/registerCompany.html#contact" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Registro</a>
 </nav>
 
 <!-- Header with full-height image -->
@@ -127,84 +130,22 @@ body, html {
 
 <!-- Team Section -->
 <div class="w3-container" style="padding:128px 16px" id="team">
-  <h3 class="w3-center">THE TEAM</h3>
-  <p class="w3-center w3-large">The ones who runs this company</p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="w3images/team2.jpg" alt="John" style="width:100%">
-        <div class="w3-container">
-          <h3>John Doe</h3>
-          <p class="w3-opacity">CEO & Founder</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="w3images/team1.jpg" alt="Jane" style="width:100%">
-        <div class="w3-container">
-          <h3>Anja Doe</h3>
-          <p class="w3-opacity">Art Director</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="w3images/team3.jpg" alt="Mike" style="width:100%">
-        <div class="w3-container">
-          <h3>Mike Ross</h3>
-          <p class="w3-opacity">Web Designer</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="w3images/team4.jpg" alt="Dan" style="width:100%">
-        <div class="w3-container">
-          <h3>Dan Star</h3>
-          <p class="w3-opacity">Designer</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
+  <h3 class="w3-center">Equipo</h3>
+  <p class="w3-center w3-large">La compañía de Arte Digital</p>
+  <p>Model3fab está realizado por el Instituto de Arte Digital.
+    En el Instituto de Arte Digital preparamos herramientas para que puedas ser capaz de crear tus modelos digitales. El medio digital permite ser capaz de representar todo lo que imagines con la única herramienta de tu ordenador y las aplicaciones que te proporcionamos.</p>
   </div>
 </div>
 
-<!-- Promo Section "Statistics" -->
-<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">14+</span>
-    <br>Partners
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">55+</span>
-    <br>Projects Done
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">89+</span>
-    <br>Happy Clients
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">150+</span>
-    <br>Meetings
-  </div>
-</div>
 
 <!-- Work Section -->
 <div class="w3-container" style="padding:128px 16px" id="work">
-  <h3 class="w3-center">OUR WORK</h3>
-  <p class="w3-center w3-large">What we've done for people</p>
+  <h3 class="w3-center">EJEMPLOS</h3>
+  <p class="w3-center w3-large">Lo que hacemos y hacen nuestros clientes</p>
 
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6">
-      <img src="w3images/tech_mic.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
+      <img src="w3images/table_2.jpg" style="width:100%" onclick="onIframeClick(this)" class="w3-hover-opacity" alt="A wood table with 2 chairs">
     </div>
     <div class="w3-col l3 m6">
       <img src="w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
@@ -213,7 +154,7 @@ body, html {
       <img src="w3images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
     </div>
     <div class="w3-col l3 m6">
-      <img src="w3images/tech_sound.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
+      <img src="w3images/table_5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A glass table with 5 chairs">
     </div>
   </div>
 
@@ -222,7 +163,7 @@ body, html {
       <img src="w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
     </div>
     <div class="w3-col l3 m6">
-      <img src="w3images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
+      <img src="w3images/wooden_board.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A wooden board">
     </div>
     <div class="w3-col l3 m6">
       <img src="w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
@@ -238,6 +179,14 @@ body, html {
   <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">&times;</span>
   <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
     <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+<!-- Modal for full size iframe on click-->
+<div id="modalIframe01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">&times;</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <iframe id="iframe01" width="100%" height="500px" src="" title="Configurador con tabla" frameborder="0" allowfullscreen></iframe>
     <p id="caption" class="w3-opacity w3-large"></p>
   </div>
 </div>
@@ -347,7 +296,7 @@ body, html {
       </p>
     </form>
     <!-- Image of location/map -->
-    <img src="w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+    <img src="w3images/volodymyr-kondriianenko-n2EXdta0MeM-1920.jpg" class="w3-image" style="width:100%;margin-top:48px">
   </div>
 </div>
 
@@ -363,6 +312,9 @@ body, html {
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  Foto de <a href="https://unsplash.com/@ryno_marais?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ryno Marais</a> en <a href="https://unsplash.com/es/fotos/p5JcD-_13ek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  Foto de <a href="https://unsplash.com/@entrpswn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Volodymyr Kondriianenko</a> en <a href="https://unsplash.com/es/fotos/n2EXdta0MeM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 </footer>
  
 <script>
@@ -370,6 +322,12 @@ body, html {
 function onClick(element) {
   document.getElementById("img01").src = element.src;
   document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+function onIframeClick(element) {
+  document.getElementById("iframe01").src = "Configurator/collection.html?collection=iPC7OG2RI7&rol=1";
+  document.getElementById("modalIframe01").style.display = "block";
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
