@@ -7,7 +7,21 @@
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="family_Raleway.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
+
+  <link rel="stylesheet" href="Configurator/forms_style.css">
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+<!--  <script type="text/javascript" src="register.js"> -->
+
+  <script type="text/javascript" type="text/javascript">
+//    Parse.initialize("APP_ID","JS_KEY"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+//    Parse.serverURL = 'https://parseapi.back4app.com/'
+
+Parse.serverURL = 'https://parseapi.back4app.com';
+Parse.initialize('3BvaDwQZMh46667Meslf8E2DuUWKjb5RBiAuXNxv', 'CRR8qDBiWK1UG04hyxeKIRoZKc3fh3g0nxTpXdKN');
+
+  </script>
+  <style>
+
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 body, html {
@@ -29,6 +43,52 @@ body, html {
 </style>
 </head>
 <body>
+<script>
+content={"materialArr":[{"name":"default","color_r":0.45,"color_g":0.72,"color_b":0.96,"emissive_r":0.33,"emissive_g":0.51,"emissive_b":0.66,"roughness":0.109,"metalness":0.35,"reflectivity":0.18,"clearcoat":0,"clearcoatRoughness":0,"transparent":true,"opacity":0.78,"diffuseMap":false,"normalFactor":1,"envMapIntensity":0.94,"ior":1.16,"wireframe":false},{"name":"ground","size_x":"0.001","size_y":"0.001","texture":"textures/uv_grid_opengl.jpg","color_r":"0.5","color_g":"0.5","color_b":"0.5","diffuseMap":false},{"name":"background","color_r":0.6,"color_g":0.6,"color_b":0.6,"diffuseMap":true},{"name":"UV_map","texture":"textures/uv_grid_opengl.jpg","diffuseMap":true}],"designArr":{"init":{"name":"init","parameters":[],"pieces":[]}}}
+
+async function validateForm() {
+    if (formSignUp.email.value == "") {
+        alert("The email is required!!");
+        return false;
+    }
+    if (formSignUp.psw.value == "") {
+        alert("The password is required!");
+        return false;
+    }
+    if (formSignUp.psw.value != formSignUp.psw_repeat.value) {
+        alert("The password doen't match!");
+        return false;
+    }
+    if (formSignUp.company.value == "") {
+        alert("The company is required!");
+        return false;
+    }
+
+// https://www.w3resource.com/javascript/form/email-validation.php
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(formSignUp.email.value))
+  {
+    //alert("don't send yet")
+    console.log("createUser")
+    params1 = {}
+    params1.username = formSignUp.email.value;
+    params1.email    = formSignUp.email.value;
+    params1.company  = formSignUp.company.value;
+    params1.password = formSignUp.psw.value;
+    params1.collectionName = "new collection";
+    params1.collectionData = JSON.stringify(content);
+    const result = await Parse.Cloud.run('createUserParams', params1);
+    console.log("company created ", result)
+    if (result != null) {
+        document.getElementById("formSignUp").classList.toggle("noDisplay");
+        document.getElementById("collections").classList.toggle("noDisplay");
+    }
+    window.location.href = "Configurator/login.html?company=" + result;
+    return true;  // don't send yet
+  }
+    alert("You have entered an invalid email address!")
+    return false;
+}
+</script>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -40,9 +100,8 @@ body, html {
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-cubes"></i> Equipo</a>
       <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Ejemplos</a>
       <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-table"></i> Planes</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contacto</a>
-      <a href="Configurator/login.html#contact" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Login</a>
-      <a href="Configurator/registerCompany.html#contact" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Registro</a>
+      <a href="Configurator/login.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Login</a>
+      <a href="#register" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Registro</a>
       <!--  other icons fa-group -->
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -60,9 +119,8 @@ body, html {
   <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Equipo</a>
   <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">Ejemplos</a>
   <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">Planes</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Contacto</a>
-  <a href="Configurator/login.html#contact" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Login</a>
-  <a href="Configurator/registerCompany.html#contact" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Registro</a>
+  <a href="Configurator/login.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Login</a>
+  <a href="#register" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Registro</a>
 </nav>
 
 <!-- Header with full-height image -->
@@ -71,7 +129,7 @@ body, html {
     <span class="w3-jumbo w3-hide-small">Configurador de muebles a medida</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-medium">Configurador de muebles a medida</span><br>
     <span class="w3-large">Añadelo a tu web tu mismo</span>
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Comienza ahora</a></p>
+    <p><a href="#register" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Comienza ahora</a></p>
   </div> 
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -145,7 +203,7 @@ body, html {
 
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6">
-      <img src="w3images/table_2.jpg" style="width:100%" onclick="onIframeClick(this)" class="w3-hover-opacity" alt="A wood table with 2 chairs">
+      <img src="w3images/table_2.jpg" style="width:100%" onclick="onIframeClick(this, 'deGn7qLziB')" class="w3-hover-opacity" alt="A wood table with 2 chairs">
     </div>
     <div class="w3-col l3 m6">
       <img src="w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
@@ -163,7 +221,7 @@ body, html {
       <img src="w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
     </div>
     <div class="w3-col l3 m6">
-      <img src="w3images/wooden_board.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A wooden board">
+      <img src="w3images/wooden_board.jpg" style="width:100%" onclick="onIframeClick(this, 'iPC7OG2RI7')" class="w3-hover-opacity" alt="A wooden board">
     </div>
     <div class="w3-col l3 m6">
       <img src="w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
@@ -275,30 +333,49 @@ body, html {
   </div>
 </div>
 
-<!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">CONTACT</h3>
-  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
-  <div style="margin-top:48px">
-    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chicago, US</p>
-    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
-    <br>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-black" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </p>
+<!-- Register Section -->
+<div class="w3-row w3-border" style="padding:128px 16px"  id="register">
+  <div class="w3-half w3-container w3-blue w3-border">
+    <p>Registrate con solo el email para probar el configurador</p>
+  </div>
+  <div class="w3-half w3-container">
+    <form name="formSignUp" id="formSignUp" style="border:1px solid #ccc">
+      <div class="w3-container">
+        <h1>Create your model3fab account</h1>
+        <p>No credit card required.</p>
+        <hr>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" class="w3-input w3-border" type="text" placeholder="Enter Email" name="email" autocomplete="username" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" autocomplete="new-password" required>
+
+        <label for="psw_repeat"><b>Repeat Password</b></label>
+        <input class="w3-input w3-border" type="password" placeholder="Repeat Password" name="psw_repeat" autocomplete="new-password" required>
+        
+        <label for="company"><b>Company name</b></label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter company name" name="company" required>
+
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+        <div class="clearfix">
+          <button type="button" onclick="validateForm()" class="signupbtn" >Sign Up</button>
+        </div>
+      </div>
     </form>
-    <!-- Image of location/map -->
-    <img src="w3images/volodymyr-kondriianenko-n2EXdta0MeM-1920.jpg" class="w3-image" style="width:100%;margin-top:48px">
   </div>
 </div>
+
+<style>
+.noDisplay {
+  display: none;
+}
+</style>
+<h2 id="collections" class="noDisplay">Collections</h2>
+
+    <!-- Image of location/map -->
+    <img src="w3images/volodymyr-kondriianenko-n2EXdta0MeM-1920.jpg" class="w3-image" style="width:100%;margin-top:48px">
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
@@ -313,7 +390,7 @@ body, html {
   </div>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
   Foto de <a href="https://unsplash.com/@ryno_marais?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ryno Marais</a> en <a href="https://unsplash.com/es/fotos/p5JcD-_13ek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  Foto de <a href="https://unsplash.com/@entrpswn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Volodymyr Kondriianenko</a> en <a href="https://unsplash.com/es/fotos/n2EXdta0MeM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  <BR>Foto de <a href="https://unsplash.com/@entrpswn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Volodymyr Kondriianenko</a> en <a href="https://unsplash.com/es/fotos/n2EXdta0MeM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 </footer>
  
@@ -325,8 +402,8 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
-function onIframeClick(element) {
-  document.getElementById("iframe01").src = "Configurator/collection.html?collection=iPC7OG2RI7&rol=1";
+function onIframeClick(element, collectionId) {
+  document.getElementById("iframe01").src = "Configurator/collection.html?collection=" +collectionId+ "&rol=1&embed";
   document.getElementById("modalIframe01").style.display = "block";
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
