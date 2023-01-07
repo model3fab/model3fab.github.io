@@ -59,10 +59,11 @@ async function validateForm() {
         alert("The password doen't match!");
         return false;
     }
-    if (formSignUp.company.value == "") {
-        alert("The company is required!");
-        return false;
-    }
+    //
+    //if (formSignUp.company.value == "") {
+    //    alert("The company is required!");
+    //    return false;
+    //}
 
 // https://www.w3resource.com/javascript/form/email-validation.php
  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(formSignUp.email.value))
@@ -279,54 +280,130 @@ async function validateForm() {
 
 <!-- Pricing Section -->
 <div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
-  <h3>PRICING</h3>
-  <p class="w3-large">Choose a pricing plan that fits your needs.</p>
+  <h3>PLANES</h3>
+  <p class="w3-large">Elieje un plan:</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-quarter w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Gratuito</li>
+        <li class="w3-padding-16"><b>Crear y editar colecciones</b></li>
+        <li class="w3-padding-16"><b>Exportar e Importar</b></li>
+        <li class="w3-padding-16"><b>Guardar en fichero</b></li>
+        <li class="w3-padding-16"><b>&nbsp;</b></li>
+        <li class="w3-padding-16"><b>1</b> Colección</li>
+        <li class="w3-padding-16"><b>40</b> piezas (2 objetos)</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"> 0 €</h2>
+          <span class="w3-opacity">No requiere tarjeta de crédito</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <a href="Configurator/collection.html" class="w3-button w3-black w3-padding-large">Crear colección</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-quarter w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Starter</li>
+        <li class="w3-padding-16"><b>Crear y editar colecciones</b></li>
+        <li class="w3-padding-16"><b>Exportar e Importar</b></li>
+        <li class="w3-padding-16"><b>Guardar en la cuenta</b></li>
+        <li class="w3-padding-16"><b>Publicar 1</b> objecto</li>
+        <li class="w3-padding-16"><b>1</b> Colección</li>
+        <li class="w3-padding-16"><b>100</b> piezas (5 objetos)</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"> 10 €</h2>
+          <span class="w3-opacity">por mes</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <a href="#register" class="w3-button w3-black w3-padding-large">Registrar</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-quarter w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+        <li class="w3-padding-16"><b>Crear y editar colecciones</b></li>
+        <li class="w3-padding-16"><b>Exportar e Importar</b></li>
+        <li class="w3-padding-16"><b>Guardar en la cuenta</b></li>
+        <li class="w3-padding-16"><b>Publicación sin limite</li>
+        <li class="w3-padding-16"><b>2</b> Colecciones</li>
+        <li class="w3-padding-16"><b>500</b> piezas (25 objetos)</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"> 49 €</h2>
+          <span class="w3-opacity">por mes</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <a href="#register" class="w3-button w3-black w3-padding-large">Registrar</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-quarter w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
+        <li class="w3-padding-16"><b>Crear y editar colecciones</b></li>
+        <li class="w3-padding-16"><b>Exportar e Importar</b></li>
+        <li class="w3-padding-16"><b>Guardar en la cuenta</b></li>
+        <li class="w3-padding-16"><b>Publicación sin limite</li>
+        <li class="w3-padding-16"><b>20</b> Colecciones</li>
+        <li class="w3-padding-16"><b>5,000</b> piezas (250 objetos)</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"> 119 €</h2>
+          <span class="w3-opacity">por mes</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <a href="#register" class="w3-button w3-black w3-padding-large">Registrar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing2">
+  <h3>PLANES AVANZADOS</h3>
+  <p class="w3-large">Elieje un plan:</p>
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-third w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-        <li class="w3-padding-16"><b>10GB</b> Storage</li>
-        <li class="w3-padding-16"><b>10</b> Emails</li>
-        <li class="w3-padding-16"><b>10</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-black w3-xlarge w3-padding-32">Premium+</li>
+        <li class="w3-padding-16"><b>Opciones Premium</b></li>
+        <li class="w3-padding-16"><b>50</b> Colección</li>
+        <li class="w3-padding-16"><b>5</b> usuarios</li>
         <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 10</h2>
-          <span class="w3-opacity">per month</span>
+          <h2 class="w3-wide"> 199 €</h2>
+          <span class="w3-opacity">por mes</span>
         </li>
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-third">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-red w3-xlarge w3-padding-48">Pro</li>
-        <li class="w3-padding-16"><b>25GB</b> Storage</li>
-        <li class="w3-padding-16"><b>25</b> Emails</li>
-        <li class="w3-padding-16"><b>25</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 25</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
+          <a href="#register" class="w3-button w3-black w3-padding-large">Registrar</a>
         </li>
       </ul>
     </div>
     <div class="w3-third w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
-        <li class="w3-padding-16"><b>50GB</b> Storage</li>
-        <li class="w3-padding-16"><b>50</b> Emails</li>
-        <li class="w3-padding-16"><b>50</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-black w3-xlarge w3-padding-32">Multicompañia</li>
+        <li class="w3-padding-16"><b>Opciones Premium+</b></li>
+        <li class="w3-padding-16"><b>Múltiples empresas</b></li>
+        <li class="w3-padding-16"><b>5</b> usuarios por empresa</li>
         <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 50</h2>
-          <span class="w3-opacity">per month</span>
+          <h2 class="w3-wide"> 119 € </h2>
+          <span class="w3-opacity">por empresa y mes</span>
         </li>
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
+          <a href="#register" class="w3-button w3-black w3-padding-large">Registrar</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Especial</li>
+        <li class="w3-padding-16"><b>Integración con ERP / facturación</b></li>
+        <li class="w3-padding-16"><b>Instalación en servidor propio</b></li>
+        <li class="w3-padding-16"><b>&nbsp;</b></li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"> Contactar</h2>
+          <span class="w3-opacity">&nbsp;</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <a href="#register" class="w3-button w3-black w3-padding-large">Registrar</a>
         </li>
       </ul>
     </div>
@@ -341,8 +418,8 @@ async function validateForm() {
   <div class="w3-half w3-container">
     <form name="formSignUp" id="formSignUp" style="border:1px solid #ccc">
       <div class="w3-container">
-        <h1>Create your model3fab account</h1>
-        <p>No credit card required.</p>
+        <h1>Crea tu cuenta model3fab</h1>
+        <p>No requiere tarjeta de crédito</p>
         <hr>
 
         <label for="email"><b>Email</b></label>
@@ -351,16 +428,16 @@ async function validateForm() {
         <label for="psw"><b>Password</b></label>
         <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" autocomplete="new-password" required>
 
-        <label for="psw_repeat"><b>Repeat Password</b></label>
+        <label for="psw_repeat"><b>Repetir Password</b></label>
         <input class="w3-input w3-border" type="password" placeholder="Repeat Password" name="psw_repeat" autocomplete="new-password" required>
         
-        <label for="company"><b>Company name</b></label>
+        <label for="company"><b>Nombre de la compañía (opcional)</b></label>
         <input class="w3-input w3-border" type="text" placeholder="Enter company name" name="company" required>
 
         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
         <div class="clearfix">
-          <button type="button" onclick="validateForm()" class="signupbtn" >Sign Up</button>
+          <button type="button" onclick="validateForm()" class="signupbtn" >Registrar</button>
         </div>
       </div>
     </form>
