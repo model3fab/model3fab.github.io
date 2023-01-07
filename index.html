@@ -204,25 +204,26 @@ async function validateForm() {
 
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6">
+      <img src="w3images/wooden_board.jpg" style="width:100%" onclick="onIframeClick(this, 'iPC7OG2RI7')" class="w3-hover-opacity" alt="A wooden board">
+    </div>
+    <div class="w3-col l3 m6">
       <img src="w3images/table_2.jpg" style="width:100%" onclick="onIframeClick(this, 'deGn7qLziB')" class="w3-hover-opacity" alt="A wood table with 2 chairs">
     </div>
     <div class="w3-col l3 m6">
-      <img src="w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="w3images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
+      <img src="w3images/armario.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Armario">
     </div>
     <div class="w3-col l3 m6">
       <img src="w3images/table_5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A glass table with 5 chairs">
     </div>
   </div>
 
+  <!--
   <div class="w3-row-padding w3-section">
     <div class="w3-col l3 m6">
       <img src="w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
     </div>
     <div class="w3-col l3 m6">
-      <img src="w3images/wooden_board.jpg" style="width:100%" onclick="onIframeClick(this, 'iPC7OG2RI7')" class="w3-hover-opacity" alt="A wooden board">
+      <img src="w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
     </div>
     <div class="w3-col l3 m6">
       <img src="w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
@@ -231,6 +232,7 @@ async function validateForm() {
       <img src="w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
     </div>
   </div>
+  -->
 </div>
 
 <!-- Modal for full size images on click-->
@@ -281,23 +283,41 @@ async function validateForm() {
 <!-- Pricing Section -->
 <div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
   <h3>PLANES</h3>
-  <p class="w3-large">Elieje un plan:</p>
+  <p class="w3-large">Elije un plan:</p>
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-quarter w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Gratuito</li>
+        <li class="w3-black w3-xlarge w3-padding-32">Sin registro</li>
         <li class="w3-padding-16"><b>Crear y editar colecciones</b></li>
         <li class="w3-padding-16"><b>Exportar e Importar</b></li>
         <li class="w3-padding-16"><b>Guardar en fichero</b></li>
         <li class="w3-padding-16"><b>&nbsp;</b></li>
         <li class="w3-padding-16"><b>1</b> Colección</li>
-        <li class="w3-padding-16"><b>40</b> piezas (2 objetos)</li>
+        <li class="w3-padding-16"><b>10</b> piezas (1 objeto básico)</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"> 0 €</h2>
+          <span class="w3-opacity">No requiere registro</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <a href="Configurator/collection.html" class="w3-button w3-black w3-padding-large">Crear colección</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-quarter w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Free</li>
+        <li class="w3-padding-16"><b>Crear y editar colecciones</b></li>
+        <li class="w3-padding-16"><b>Exportar e Importar</b></li>
+        <li class="w3-padding-16"><b>Guardar en la cuenta</b></li>
+        <li class="w3-padding-16"><b>Publicar 1</b> objeto (con logo model3fab)</li>
+        <li class="w3-padding-16"><b>1</b> Colección</li>
+        <li class="w3-padding-16"><b>20</b> piezas (1 objeto)</li>
         <li class="w3-padding-16">
           <h2 class="w3-wide"> 0 €</h2>
           <span class="w3-opacity">No requiere tarjeta de crédito</span>
         </li>
         <li class="w3-light-grey w3-padding-24">
-          <a href="Configurator/collection.html" class="w3-button w3-black w3-padding-large">Crear colección</a>
+          <a href="#register" class="w3-button w3-black w3-padding-large">Registrar</a>
         </li>
       </ul>
     </div>
@@ -307,8 +327,8 @@ async function validateForm() {
         <li class="w3-padding-16"><b>Crear y editar colecciones</b></li>
         <li class="w3-padding-16"><b>Exportar e Importar</b></li>
         <li class="w3-padding-16"><b>Guardar en la cuenta</b></li>
-        <li class="w3-padding-16"><b>Publicar 1</b> objecto</li>
-        <li class="w3-padding-16"><b>1</b> Colección</li>
+        <li class="w3-padding-16"><b>Publicar 2</b> objetos</li>
+        <li class="w3-padding-16"><b>2</b> Colecciones</li>
         <li class="w3-padding-16"><b>100</b> piezas (5 objetos)</li>
         <li class="w3-padding-16">
           <h2 class="w3-wide"> 10 €</h2>
@@ -326,10 +346,10 @@ async function validateForm() {
         <li class="w3-padding-16"><b>Exportar e Importar</b></li>
         <li class="w3-padding-16"><b>Guardar en la cuenta</b></li>
         <li class="w3-padding-16"><b>Publicación sin limite</li>
-        <li class="w3-padding-16"><b>2</b> Colecciones</li>
+        <li class="w3-padding-16"><b>5</b> Colecciones</li>
         <li class="w3-padding-16"><b>500</b> piezas (25 objetos)</li>
         <li class="w3-padding-16">
-          <h2 class="w3-wide"> 49 €</h2>
+          <h2 class="w3-wide"> 49 € *</h2>
           <span class="w3-opacity">por mes</span>
         </li>
         <li class="w3-light-grey w3-padding-24">
@@ -337,13 +357,19 @@ async function validateForm() {
         </li>
       </ul>
     </div>
+  </div>
+  <p>* Los clientes registrados hasta el 30 de abril que publiquen 2 modelos en model3fab tendrán un plan Pro gratuito perpetuo o un descuento del 50% en el plan Premium</p>
+</div>
+
+
+<div class="w3-container w3-center w3-dark-grey" style="padding:32px 16px" id="pricing2">
+  <h3>PLANES AVANZADOS</h3>
+  <p class="w3-large">Elije un plan:</p>
+  <div class="w3-row-padding" style="margin-top:32px">
     <div class="w3-quarter w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
         <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
-        <li class="w3-padding-16"><b>Crear y editar colecciones</b></li>
-        <li class="w3-padding-16"><b>Exportar e Importar</b></li>
-        <li class="w3-padding-16"><b>Guardar en la cuenta</b></li>
-        <li class="w3-padding-16"><b>Publicación sin limite</li>
+        <li class="w3-padding-16"><b>Opciones Pro</b></li>
         <li class="w3-padding-16"><b>20</b> Colecciones</li>
         <li class="w3-padding-16"><b>5,000</b> piezas (250 objetos)</li>
         <li class="w3-padding-16">
@@ -355,14 +381,7 @@ async function validateForm() {
         </li>
       </ul>
     </div>
-  </div>
-</div>
-
-<div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing2">
-  <h3>PLANES AVANZADOS</h3>
-  <p class="w3-large">Elieje un plan:</p>
-  <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-third w3-section">
+    <div class="w3-quarter w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
         <li class="w3-black w3-xlarge w3-padding-32">Premium+</li>
         <li class="w3-padding-16"><b>Opciones Premium</b></li>
@@ -377,7 +396,7 @@ async function validateForm() {
         </li>
       </ul>
     </div>
-    <div class="w3-third w3-section">
+    <div class="w3-quarter w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
         <li class="w3-black w3-xlarge w3-padding-32">Multicompañia</li>
         <li class="w3-padding-16"><b>Opciones Premium+</b></li>
@@ -392,7 +411,7 @@ async function validateForm() {
         </li>
       </ul>
     </div>
-    <div class="w3-third w3-section">
+    <div class="w3-quarter w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
         <li class="w3-black w3-xlarge w3-padding-32">Especial</li>
         <li class="w3-padding-16"><b>Integración con ERP / facturación</b></li>
@@ -413,7 +432,7 @@ async function validateForm() {
 <!-- Register Section -->
 <div class="w3-row w3-border" style="padding:128px 16px"  id="register">
   <div class="w3-half w3-container w3-blue w3-border">
-    <p>Registrate con solo el email para probar el configurador</p>
+    <p>Registrate con solo el email para guardar y publicar tus diseños</p>
   </div>
   <div class="w3-half w3-container">
     <form name="formSignUp" id="formSignUp" style="border:1px solid #ccc">
