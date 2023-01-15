@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="Configurator/forms_style.css">
   <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+  <script type="text/javascript" type="text/javascript" src="user.js"></script>
 <!--  <script type="text/javascript" src="register.js"> -->
 
   <script type="text/javascript" type="text/javascript">
@@ -80,10 +81,11 @@ async function validateForm() {
     const result = await Parse.Cloud.run('createUserParams', params1);
     console.log("company created ", result)
     if (result != null) {
-        document.getElementById("formSignUp").classList.toggle("noDisplay");
-        document.getElementById("collections").classList.toggle("noDisplay");
+        setCookie("confToken", result.get("sessionToken"), 30);
+        setLoginName(result.get("username"));
+      //window.location.href = "Configurator/login.html?company=" + result;
+        window.location.href = "Configurator/login.html";
     }
-    window.location.href = "Configurator/login.html?company=" + result;
     return true;  // don't send yet
   }
     alert("You have entered an invalid email address!")
@@ -101,7 +103,7 @@ async function validateForm() {
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-cubes"></i> Equipo</a>
       <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Ejemplos</a>
       <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-table"></i> Planes</a>
-      <a href="Configurator/login.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> Login</a>
+      <a href="Configurator/login.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> <span id="loginName"> Login<span></a>
       <a href="#register" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Registro</a>
       <!--  other icons fa-group -->
     </div>
@@ -469,7 +471,6 @@ async function validateForm() {
   display: none;
 }
 </style>
-<h2 id="collections" class="noDisplay">Collections</h2>
 
     <!-- Image of location/map -->
     <img src="w3images/volodymyr-kondriianenko-n2EXdta0MeM-1920.jpg" class="w3-image" style="width:100%;margin-top:48px">
@@ -525,4 +526,13 @@ function w3_close() {
 </script>
 
 </body>
+<script>
+async function currentUser() {
+    const result = await Parse.Cloud.run('currentUser', {token: getCookie("confToken")});
+    if (result != null) {
+        setLoginName(result.username);
+    }
+}
+currentUser();
+</script>
 </html>
