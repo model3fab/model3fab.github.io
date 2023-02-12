@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Furnitures Web</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+  <script type="text/javascript" type="text/javascript" src="user.js"></script>
+  <script type="text/javascript" type="text/javascript">
+Parse.serverURL = 'https://parseapi.back4app.com';
+Parse.initialize('3BvaDwQZMh46667Meslf8E2DuUWKjb5RBiAuXNxv', 'CRR8qDBiWK1UG04hyxeKIRoZKc3fh3g0nxTpXdKN');
+</script>
+
+    <script>
+            companyName = window.location.search.substr(1);
+            var attrValue;
+            if (companyName.length > 0) {
+                attrValue = companyName;
+            } else {
+                attrValue = null;
+            }
+            Parse.Cloud.run('readCollections', {token: getCookie("confToken"), companyName: attrValue}).then(function(collectionsResult) {
+            if (collectionsResult == null) {
+            } else {
+                companyName = collectionsResult.companyName;
+                document.getElementById("companyName").innerHTML = companyName;
+                var collections_container = document.getElementsByClassName("collections_container")[0];
+                var collection_header = document.getElementsByClassName("collection_header")[0];
+                var block_unit = document.getElementsByClassName("block_unit")[0];
+                for (i=0; i < collectionsResult.collections.length; i++) {
+                    collectionName = "Collection: " + collectionsResult.collections[i].name;
+                    collectionId = collectionsResult.collections[i].id;
+                    new_node = collection_header.cloneNode(true);
+                    collections_container.appendChild(new_node);
+                    new_node.style = "display: init";
+                    new_node.innerHTML = collectionName;
+                    var sessions = JSON.parse(collectionsResult.collections[i].data).designArr;
+                    for (j=0; j < sessions.length; j++) {
+                        new_node = block_unit.cloneNode(true);
+                        collections_container.appendChild(new_node);
+                        new_node.style = "display: init";
+                        nameTitle = new_node.getElementsByTagName("H2")[0];
+                        nameTitle.innerHTML = sessions[j].name;
+                        objDescription = new_node.getElementsByTagName("P")[0];
+                        if (sessions[j].description != null) {
+                            objDescription.innerHTML = sessions[j].description;
+                        }
+                        objImage = new_node.getElementsByTagName("img")[0];
+                        if (sessions[j].image != null) {
+                            objImage.src = sessions[j].image;
+                        }
+                        objLink = new_node.getElementsByTagName("a")[0];
+                        objectId = sessions[j].id;
+                        
+                        pos = window.location.pathname.indexOf("/",1)
+                        application = window.location.pathname.substring(0,pos);
+                        url_finalStr = window.location.origin + application + "/Configurator" + "?collection=" + collectionId + "&object=" + objectId + "&rol=1&embed";
+                        objLink.href = url_finalStr;
+                    }
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+
+<div class="w3-display-container" style="margin-bottom:50px">
+  <img src="w3images/tabla.jpg" style="width:100%">
+  <div class="w3-display-bottomleft w3-container w3-amber w3-hover-orange w3-hide-small"
+   style="bottom:80%;opacity:0.7;width:70%">
+  <h2><b id="companyName">Comapany name<br>Our models</b></h2>
+</div>
+</div>
+<h2 class="collection_header" style="display:none;">Collection</h2>
+<div class="w3-row w3-container collections_container" style="margin:50px 0">
+<div class="w3-half w3-container block_unit" style="display:none;">
+  <div class="w3-topbar w3-border-amber">
+    <img src="w3images/armario.jpg" style="width:100%">
+    <h2>Name</h2>
+    <p>Fulrniture.</p>
+    <a target='_blank'>View</a>
+    <!-- <iframe id='iframe01' width='100%' height='500px' src='" + url_finalStr + "'>" + "'</iframe> -->
+  </div>
+</div>
+
+</div>
+
+
+</body>
+</html>
