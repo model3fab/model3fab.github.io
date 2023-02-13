@@ -38,26 +38,28 @@ Parse.initialize('3BvaDwQZMh46667Meslf8E2DuUWKjb5RBiAuXNxv', 'CRR8qDBiWK1UG04hyx
                     new_node.innerHTML = collectionName;
                     var sessions = JSON.parse(collectionsResult.collections[i].data).designArr;
                     for (j=0; j < sessions.length; j++) {
-                        new_node = block_unit.cloneNode(true);
-                        collections_container.appendChild(new_node);
-                        new_node.style = "display: init";
-                        nameTitle = new_node.getElementsByTagName("H2")[0];
-                        nameTitle.innerHTML = sessions[j].name;
-                        objDescription = new_node.getElementsByTagName("P")[0];
-                        if (sessions[j].description != null) {
-                            objDescription.innerHTML = sessions[j].description;
+                        if (sessions[j].publish) {
+                            new_node = block_unit.cloneNode(true);
+                            collections_container.appendChild(new_node);
+                            new_node.style = "display: init";
+                            nameTitle = new_node.getElementsByTagName("H2")[0];
+                            nameTitle.innerHTML = sessions[j].name;
+                            objDescription = new_node.getElementsByTagName("P")[0];
+                            if (sessions[j].description != null) {
+                                objDescription.innerHTML = sessions[j].description;
+                            }
+                            objImage = new_node.getElementsByTagName("img")[0];
+                            if (sessions[j].image != null) {
+                                objImage.src = sessions[j].image;
+                            }
+                            objLink = new_node.getElementsByTagName("a")[0];
+                            objectId = sessions[j].id;
+                            
+                            pos = window.location.pathname.indexOf("/",1)
+                            application = window.location.pathname.substring(0,pos);
+                            url_finalStr = window.location.origin + application + "/Configurator" + "?collection=" + collectionId + "&object=" + objectId + "&rol=1&embed";
+                            objLink.href = url_finalStr;
                         }
-                        objImage = new_node.getElementsByTagName("img")[0];
-                        if (sessions[j].image != null) {
-                            objImage.src = sessions[j].image;
-                        }
-                        objLink = new_node.getElementsByTagName("a")[0];
-                        objectId = sessions[j].id;
-                        
-                        pos = window.location.pathname.indexOf("/",1)
-                        application = window.location.pathname.substring(0,pos);
-                        url_finalStr = window.location.origin + application + "/Configurator" + "?collection=" + collectionId + "&object=" + objectId + "&rol=1&embed";
-                        objLink.href = url_finalStr;
                     }
                 }
             }
