@@ -105,7 +105,7 @@ async function validateForm() {
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-cubes"></i> Equipo</a>
       <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Ejemplos</a>
       <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-table"></i> Planes</a>
-      <a href="videos.html" target="_blank" class="w3-bar-item w3-button"><i class="fa fa-youtube-play"></i>Tutorials</a>
+      <a href="videos.html" target="_blank" class="w3-bar-item w3-button"><i class="fa fa-youtube-play"></i> Tutorials</a>
       <a href="Configurator/login.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> <span id="loginName"> Login<span></a>
       <a href="#register" class="w3-bar-item w3-button"><i class="fa fa-user-plus"></i> Registro</a>
       <!--  other icons fa-group -->
@@ -217,7 +217,8 @@ async function validateForm() {
       <img src="w3images/table_2.jpg" style="width:100%" onclick="onIframeClick(this, 'deGn7qLziB')" class="w3-hover-opacity" alt="A wood table with 2 chairs">
     </div>
     <div class="w3-col l3 m6">
-      <img src="w3images/armario.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Armario">
+      <img src="w3images/armario.jpg" style="width:100%" onclick="onIframeClick(this, '1Q0zI01g4V&object=armario')" class="w3-hover-opacity" alt="Armario">
+      <!-- <img src="w3images/armario.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Armario"> -->
     </div>
     <div class="w3-col l3 m6">
       <img src="w3images/balda.jpg" style="width:100%" onclick="onIframeClick(this, 'YHJeTLbDap')" class="w3-hover-opacity" alt="A glass table with 5 chairs">
@@ -253,8 +254,8 @@ async function validateForm() {
 <!-- Modal for full size iframe on click-->
 <div id="modalIframe01" class="w3-modal w3-black" onclick="this.style.display='none'">
   <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">&times;</span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <iframe id="iframe01" width="100%" height="500px" src="" title="Configurador con tabla" frameborder="0" allowfullscreen></iframe>
+  <div class="w3-modal-content w3-center w3-transparent w3-padding-64">
+    <iframe id="iframe01" width="100%" height="500px" src="" title="Configurador con tabla" frameborder="0" allowfullscreen onload="this.style.opacity=1;" style="opacity:0;border:none;"></iframe>
     <p id="caption" class="w3-opacity w3-large"></p>
   </div>
 </div>
